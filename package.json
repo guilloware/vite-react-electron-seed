@@ -1,0 +1,68 @@
+{
+  "name": "vite-react-electron-seed",
+  "version": "0.1.0",
+  "description": "This seed project provides a starting point for building applications with Vite, React, TypeScript, and Electron. It includes a basic setup with essential configurations to get you started quickly.",
+  "author": "guilloware",
+  "private": true,
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode development",
+    "build": "vite build --mode development",
+    "serve": "vite preview",
+    "electron": "sh electron.sh",
+    "start": "sh electron.sh",
+    "exe": "electron-builder"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^6.0.0-alpha.11",
+    "@mui/material": "^6.0.0-alpha.11",
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "copyfiles": "^2.4.1",
+    "electron": "^31.2.0",
+    "typescript": "^5.5.2",
+    "vite-plugin-mkcert": "^1.17.5",
+    "dotenv": "^16.4.5",
+    "vite": "^5.3.1"
+  },
+  "build": {
+    "appId": "com.seed.app",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "dist/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "src/icons",
+        "to": "icons"
+      }
+    ],
+    "win": {
+      "target": "portable"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
